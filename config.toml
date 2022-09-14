@@ -4,14 +4,14 @@ baseURL = "http://example.org/"
 theme = "LoveIt"
 
 # website title
-title = "My New Hugo Site"
+title = "Septemus's Blog"
 
 # language code ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "en"
 # language name ["English", "简体中文", "Français", "Polski", ...]
 languageName = "English"
 # whether to include Chinese/Japanese/Korean
-hasCJKLanguage = false
+hasCJKLanguage = true
 
 # default amount of posts in each pages
 paginate = 12
@@ -32,7 +32,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 # Author config
 [author]
-  name = "xxxx"
+  name = "Septemus"
   email = ""
   link = ""
 
@@ -48,14 +48,6 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     name = "Posts"
     url = "/posts/"
     # title will be shown when you hover on this menu link
-    title = ""
-  [[menu.main]]
-    weight = 2
-    identifier = "tags"
-    pre = ""
-    post = ""
-    name = "Tags"
-    url = "/tags/"
     title = ""
   [[menu.main]]
     weight = 3
@@ -77,7 +69,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   #  date format
   dateFormat = "2006-01-02"
   # website title for Open Graph and Twitter Cards
-  title = "My cool site"
+  title = "Septemus"
   # website description for RSS, SEO, Open Graph and Twitter Cards
   description = "This is my cool site"
   # website images for Open Graph and Twitter Cards
@@ -94,7 +86,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # URL of the LOGO
       logo = ""
       # title name
-      name = ""
+      name = "Septemus"
       # you can add extra information before the name (HTML format is supported), such as icons
       pre = ""
       # you can add extra information after the name (HTML format is supported), such as icons
@@ -185,17 +177,17 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # Gravatar Email for preferred avatar in home page
       gravatarEmail = ""
       # URL of avatar shown in home page
-      avatarURL = "/images/avatar.png"
+      avatarURL = "/images/Augustus.jpg"
       #  title shown in home page (HTML format is supported)
-      title = ""
+      title = "Septemus"
       # subtitle shown in home page (HTML format is supported)
-      subtitle = "This is My New Hugo Site"
+      subtitle = "Hello World!Thiss my new blog.Despt its simplicity,itll cmplt as time gos.Hope ull enjy ur time and fnd som cool stuf hre!"
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
       social = true
       #  disclaimer (HTML format is supported)
-      disclaimer = ""
+      disclaimer = "Built In Sep,2022.Tribute to Super Sass."
     # Home page posts
     [params.home.posts]
       enable = true
@@ -207,81 +199,12 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
   # Social config about the author
   [params.social]
-    GitHub = "xxxx"
-    Linkedin = ""
-    Twitter = "xxxx"
+    GitHub = "Septemus"
+    Twitter = "musketeerdt"
     Instagram = "xxxx"
     Facebook = "xxxx"
-    Telegram = "xxxx"
-    Medium = ""
-    Gitlab = ""
-    Youtubelegacy = ""
-    Youtubecustom = ""
-    Youtubechannel = ""
-    Tumblr = ""
-    Quora = ""
-    Keybase = ""
-    Pinterest = ""
-    Reddit = ""
-    Codepen = ""
-    FreeCodeCamp = ""
-    Bitbucket = ""
-    Stackoverflow = ""
-    Weibo = ""
-    Odnoklassniki = ""
-    VK = ""
-    Flickr = ""
-    Xing = ""
-    Snapchat = ""
-    Soundcloud = ""
-    Spotify = ""
-    Bandcamp = ""
-    Paypal = ""
-    Fivehundredpx = ""
-    Mix = ""
-    Goodreads = ""
-    Lastfm = ""
-    Foursquare = ""
-    Hackernews = ""
-    Kickstarter = ""
-    Patreon = ""
-    Steam = ""
-    Twitch = ""
-    Strava = ""
-    Skype = ""
-    Whatsapp = ""
-    Zhihu = ""
-    Douban = ""
-    Angellist = ""
-    Slidershare = ""
-    Jsfiddle = ""
-    Deviantart = ""
-    Behance = ""
-    Dribbble = ""
-    Wordpress = ""
-    Vine = ""
-    Googlescholar = ""
-    Researchgate = ""
-    Mastodon = ""
-    Thingiverse = ""
-    Devto = ""
-    Gitea = ""
-    XMPP = ""
-    Matrix = ""
-    Bilibili = ""
-    Discord = ""
-    DiscordInvite = ""
-    Lichess = ""
-    ORCID = ""
-    Pleroma = ""
-    Kaggle = ""
-    MediaWiki= ""
-    Plume = ""
-    HackTheBox = ""
-    RootMe= ""
-    Phone = ""
-    Email = "xxxx@xxxx.com"
-    RSS = true # 
+    Email = "musketeerdt@gmail.com"
+    RSS = false # 
 
   #  Page global config
   [params.page]
@@ -366,7 +289,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       Flipboard = false
       Weibo = true
       Blogger = false
-      Baidu = false
+      Baidu = true
       Odnoklassniki = false
       Evernote = false
       Skype = false
@@ -374,7 +297,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       Mix = false
     #  Comment config
     [params.page.comment]
-      enable = false
+      enable = true
       # Disqus comment config
       [params.page.comment.disqus]
         # 
@@ -413,7 +336,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
         emoji = ""
       # Facebook comment config
       [params.page.comment.facebook]
-        enable = false
+        enable = true
         width = "100%"
         numPosts = 10
         appId = ""
