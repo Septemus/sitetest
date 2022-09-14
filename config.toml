@@ -201,8 +201,8 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   [params.social]
     GitHub = "Septemus"
     Twitter = "musketeerdt"
-    Instagram = "xxxx"
-    Facebook = "xxxx"
+    Instagram = "musketeerdt2022"
+    Facebook = "musketeerdt"
     Email = "musketeerdt@gmail.com"
     RSS = false # 
 
