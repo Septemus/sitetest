@@ -1,5 +1,5 @@
 ---
-title: "2022年计算机与人工智能学院转专业机考试题"
+title: "2022年西南交通大学计算机与人工智能学院转专业机考试题"
 date: 2022-09-12T17:40:46+08:00
 draft: false
 categories: ["college"]
@@ -9,10 +9,12 @@ categories: ["college"]
 {{< admonition type=note title="Attention" open=false >}}
 由于2022年考核形式特殊，不具备普适性，本文对试卷原题略有修改，使其与一般情况下OJ模式吻合。
 {{< /admonition >}}
-{{< admonition type=warning title="Warning" open=false >}}
+{{< admonition type=warning title="Warning1" open=false >}}
 本人能力有限，代码可能有错误。若读者发现欢迎联系我指出！
 {{< /admonition >}}
-
+{{< admonition type=warning title="Warning2" open=false >}}
+机考和ACM、蓝桥杯之类的编程比赛有差别，不是通过了测试点就得分。改卷老师会参考代码的具体书写情况。极不推荐考生使用qsort、bsearch等库函数图方便！
+{{< /admonition >}}
 > ## 1.序列生成
 > ### 题目要求
 
@@ -297,7 +299,11 @@ long long func(int n)
 1003 Alice 55
 ```
 
-解题思路：将结点连成链表，直接在链表上进行插入排序，输出到文件。
+解题思路：输入完一个结点，就把这个结点插入到链表的正确位置，这样输入完后链表就是有序的，就可以直接输出到b文件。
+
+{{< admonition type=failure title="Wrong answer" open=false >}}
+据改卷老师说法，此题不能采用先把结点排好序再连成链表，或者先连成链表再在链表上排序的做法。
+{{< /admonition >}}
 
 Source Code:
 ```c
@@ -309,38 +315,30 @@ Source Code:
 typedef struct node {
 	int id, grd;
 	char name[25];
-	struct node* next, *last;
+	struct node* next, * last;
 }node;
-typedef struct list {
-	node* head;
-}list;
+typedef struct list { node* head; }list;
 list* crtl();
 node* crtn(int id, int grd, char* n);
-void push(list* l, node* newn);
-void lsort(list* l);
 void clear(list* l);
 int main(void)
 {
 	FILE* fp = fopen("d:\\a.txt", "r");
-	list* L = crtl();
-	int id, grd; char tn[25];
+	list* L = crtl(); int id, grd; char tn[25]; node* p;
 	while (fscanf(fp, "%d %s %d", &id, tn, &grd) != EOF)
 	{
-		//printf("test:%s\n", tn);
 		node* newn = crtn(id, grd, tn);
-		push(L, newn);
+		for (p = L->head; p->next && p->next->grd > grd; p = p->next);
+		newn->next = p->next;
+		p->next = newn;
 	}
-	lsort(L);
-	fclose(fp);
-	fp = fopen("d:\\b.txt", "w");
-	node* p = L->head->next;
+	fclose(fp);fp = fopen("d:\\b.txt", "w");
+	p = L->head->next;
 	while (p) {
 		fprintf(fp, "%d %s %d\n", p->id, p->name, p->grd);
-		//printf("%d %s %d\n", p->id, p->name, p->grd);
 		p = p->next;
 	}
-	fclose(fp);
-	clear(L);
+	fclose(fp);clear(L);
 	return 0;
 }
 list* crtl()
@@ -356,39 +354,11 @@ node* crtn(int id, int grd, char* n)
 	ret->next = ret->last = NULL;
 	return ret;
 }
-void push(list* l, node* newn)
-{
-	node* p = l->head;
-	while (p->next) p = p->next;
-	p->next = newn;
-	newn->last = p;
-}
-void lsort(list* l)
-{
-	node* p = l->head->next,*p1=NULL;
-	p = p->next;
-	while (p) {
-		p1 = p->last; int tid = p->id, tgrd = p->grd; char tname[25]; strcpy(tname, p->name);
-		while (p1 != l->head) {
-			if (p1->grd < tgrd) {
-				p1->next->id = p1->id, p1->next->grd = p1->grd;
-				strcpy(p1->next->name, p1->name);
-			}
-			else break;
-			p1 = p1->last;
-		}
-		p1->next->id = tid;
-		p1->next->grd = tgrd;
-		strcpy(p1->next->name, tname);
-		p = p->next;
-	}
-}
 void clear(list* l)
 {
-	node* p = l->head,*t;
+	node* p = l->head, * t;
 	while (p) {
-		t = p;
-		p = p->next;
+		t = p; p = p->next;
 		free(t);
 	}
 	free(l);
