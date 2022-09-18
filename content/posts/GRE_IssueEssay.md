@@ -7,6 +7,9 @@ categories: ["GRE"]
 {{< admonition type=warning title="" open=false >}}
 I'm just a student preparing for GRE,not an expert.All my experience comes from my personal view along with online resource.Thus the information in my posts can be incomplete or flawed.Meanwhile,my methods aren't necessarily the optimum.
 {{< /admonition >}}
+{{< admonition type=info title="" open=false >}}
+The content is to be fulfilled and amended in the future.
+{{< /admonition >}}
 
 > ## Abstract
 1. Generalization
