@@ -1,5 +1,5 @@
 ---
-title: "GRE Issue Essay Constructure"
+title: "GRE Issue Essay Structure"
 date: 2022-09-12T15:13:17+08:00
 draft: false
 categories: ["GRE"]
